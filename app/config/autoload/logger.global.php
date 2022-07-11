@@ -10,7 +10,7 @@ use Laminas\Stratigility\Middleware\ErrorHandler;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogHandler;
-use Monolog\Level;
+use Monolog\Logger;
 use Monolog\Processor\IntrospectionProcessor;
 use Monolog\Processor\MemoryPeakUsageProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
@@ -25,15 +25,15 @@ if (getenv('APP_ENV') === 'development') {
 }
 
 $level = match (getenv('APP_LOG_LEVEL')) {
-    'debug' => Level::Debug,
-    'info' => Level::Info,
-    'notice' => Level::Notice,
-    'warning' => Level::Warning,
-    'error' => Level::Error,
-    'critical' => Level::Critical,
-    'alert' => Level::Alert,
-    'emergency' => Level::Emergency,
-    default => getenv('APP_ENV') === 'development' ? Level::Debug : Level::Info,
+    'debug' => Logger::DEBUG,
+    'info' => Logger::INFO,
+    'notice' => Logger::NOTICE,
+    'warning' => Logger::WARNING,
+    'error' => Logger::ERROR,
+    'critical' => Logger::CRITICAL,
+    'alert' => Logger::ALERT,
+    'emergency' => Logger::EMERGENCY,
+    default => getenv('APP_ENV') === 'development' ? Logger::DEBUG : Logger::INFO,
 };
 
 return [

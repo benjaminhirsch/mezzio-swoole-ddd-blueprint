@@ -1,4 +1,13 @@
 *
 !cache
 !cache/.gitkeep
+!logging
+!logging/.gitkeep
+!database
+!database/migrations
+!database/migrations/.gitkeep
+!database/migrations/*.php
+!database/seeds
+!database/seeds/.gitkeep
+!database/seeds/*.php
 !.gitignore

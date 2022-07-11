@@ -102,6 +102,14 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/phpstan/phpdoc-parser" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/robmorgan/phinx" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/utility" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/datasource" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/core" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/database" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

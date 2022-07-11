@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Factory\Database\PdoFactory;
 use App\Infrastructure\Command\FactoryGenerator;
 use App\Infrastructure\Response\HtmlResponseRenderer;
 use App\Infrastructure\Response\ResponseRenderer;
 use Laminas\Di\InjectorInterface;
+use PDO;
 
+use function array_merge;
 use function file_exists;
 
 /**
@@ -47,7 +50,9 @@ class ConfigProvider
                 ],
             ],
             'aliases' => [ResponseRenderer::class => HtmlResponseRenderer::class],
-            'factories' => $this->getGeneratedFactories(),
+            'factories' => array_merge($this->getGeneratedFactories(), [
+                PDO::class => PdoFactory::class,
+            ]),
             'delegators' => [
                 InjectorInterface::class => [
                     InjectorDecoratorFactory::class,

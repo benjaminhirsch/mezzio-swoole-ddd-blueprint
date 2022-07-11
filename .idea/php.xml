@@ -102,6 +102,14 @@
       <path value="$PROJECT_DIR$/app/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/app/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/app/vendor/robmorgan/phinx" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/utility" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/datasource" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/core" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/database" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
