@@ -72,6 +72,7 @@
         "laminas/laminas-development-mode": "^3.3.0",
         "mezzio/mezzio-tooling": "^2.5",
         "openswoole/ide-helper": "^4.11",
+        "phpstan/phpstan": "^1.8",
         "phpunit/phpunit": "^9.5.11",
         "roave/security-advisories": "dev-master",
         "squizlabs/php_codesniffer": "^3.7"

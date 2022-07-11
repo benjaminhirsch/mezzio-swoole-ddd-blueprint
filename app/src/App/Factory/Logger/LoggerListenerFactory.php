@@ -7,14 +7,21 @@ namespace App\Factory\Logger;
 use App\Domain\Exception\MissingConfiguration;
 use App\Infrastructure\Logger\LoggingErrorListener;
 use DateTimeZone;
+use Monolog\Handler\HandlerInterface;
 use Monolog\Logger;
+use Monolog\Processor\ProcessorInterface;
 use Psr\Container\ContainerInterface;
+
+use function assert;
+use function is_array;
 
 final class LoggerListenerFactory
 {
     public function __invoke(ContainerInterface $container): LoggingErrorListener
     {
-        $loggerConfig = $container->get('config')['exception-logger'] ?? null;
+        $config = $container->get('config');
+        assert(is_array($config));
+        $loggerConfig = $config['exception-logger'] ?? null;
 
         if ($loggerConfig === null) {
             throw new MissingConfiguration(
@@ -50,11 +57,15 @@ final class LoggerListenerFactory
         $logger->setTimezone(new DateTimeZone($loggerConfig['timezone']));
 
         foreach ($loggerConfig['handlers'] as $processor) {
-            $logger->pushHandler($container->get($processor));
+            $resolvedProcessor = $container->get($processor);
+            assert($resolvedProcessor instanceof HandlerInterface);
+            $logger->pushHandler($resolvedProcessor);
         }
 
         foreach ($loggerConfig['processors'] as $processor) {
-            $logger->pushProcessor($container->get($processor));
+            $resolvedProcessor = $container->get($processor);
+            assert($resolvedProcessor instanceof ProcessorInterface);
+            $logger->pushProcessor($resolvedProcessor);
         }
 
         return new LoggingErrorListener($logger);

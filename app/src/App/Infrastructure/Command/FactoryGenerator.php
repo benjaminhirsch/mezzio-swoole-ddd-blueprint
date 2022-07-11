@@ -17,10 +17,11 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use function array_map;
+use function assert;
 
 final class FactoryGenerator extends Command
 {
-    public function __construct(private ContainerInterface $container)
+    public function __construct(private readonly ContainerInterface $container)
     {
         parent::__construct();
     }
@@ -38,6 +39,7 @@ final class FactoryGenerator extends Command
         ];
 
         $diConfig = $this->container->get(ConfigInterface::class);
+        assert($diConfig instanceof ConfigInterface);
 
         $resolver = new DependencyResolver(new RuntimeDefinition(), $diConfig);
         $resolver->setContainer($this->container);
@@ -49,6 +51,7 @@ final class FactoryGenerator extends Command
         $directoriesSourceLocator = new DirectoriesSourceLocator($directories, $astLocator);
         $reflector                = new DefaultReflector($directoriesSourceLocator);
 
+        /** @phpstan-ignore-next-line */
         $generator->generate(array_map(static fn ($reflection) => $reflection->getName(), $reflector->reflectAllClasses()));
 
         return Command::SUCCESS;

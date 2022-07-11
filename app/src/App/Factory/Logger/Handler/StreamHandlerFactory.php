@@ -8,11 +8,16 @@ use App\Domain\Exception\MissingConfiguration;
 use Monolog\Handler\StreamHandler;
 use Psr\Container\ContainerInterface;
 
+use function assert;
+use function is_array;
+
 final class StreamHandlerFactory
 {
     public function __invoke(ContainerInterface $container): StreamHandler
     {
-        $handler = $container->get('config')['handlers'][StreamHandler::class] ?? null;
+        $config = $container->get('logger-listener');
+        assert(is_array($config));
+        $handler = $config['handlers'][StreamHandler::class] ?? null;
 
         if ($handler === null) {
             throw new MissingConfiguration(

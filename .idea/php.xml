@@ -3,6 +3,7 @@
   <component name="PhpCodeSniffer">
     <phpcs_settings>
       <PhpCSConfiguration tool_path="$PROJECT_DIR$/app/vendor/bin/phpcs" />
+      <phpcs_by_interpreter interpreter_id="27ec5f3c-a4cd-4d36-aeac-51783ad1b46b" standards="Doctrine;MySource;PEAR;PSR1;PSR12;PSR2;SlevomatCodingStandard;Squiz;Zend" tool_path="/var/www/html/vendor/bin/phpcs" timeout="30000" />
     </phpcs_settings>
   </component>
   <component name="PhpIncludePathManager">
@@ -100,6 +101,7 @@
       <path value="$PROJECT_DIR$/app/vendor/dealerdirect/phpcodesniffer-composer-installer" />
       <path value="$PROJECT_DIR$/app/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/app/vendor/phpstan/phpstan" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -187,6 +189,12 @@
     </phpInfoCache>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/app/vendor/bin/phpstan" />
+      <phpstan_by_interpreter interpreter_id="27ec5f3c-a4cd-4d36-aeac-51783ad1b46b" tool_path="/var/www/html/vendor/bin/phpstan" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/app/vendor/autoload.php" />

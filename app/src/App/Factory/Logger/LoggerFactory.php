@@ -6,8 +6,14 @@ namespace App\Factory\Logger;
 
 use App\Domain\Exception\MissingConfiguration;
 use DateTimeZone;
+use Monolog\Handler\HandlerInterface;
 use Monolog\Logger;
+use Monolog\Processor\ProcessorInterface;
 use Psr\Container\ContainerInterface;
+
+use function assert;
+use function is_iterable;
+use function is_string;
 
 final class LoggerFactory
 {
@@ -46,15 +52,24 @@ final class LoggerFactory
             );
         }
 
+        assert(is_string($config['channel']));
+        assert(is_string($config['timezone']));
+        assert(is_iterable($config['handlers']));
+        assert(is_iterable($config['processors']));
+
         $logger = new Logger($config['channel']);
         $logger->setTimezone(new DateTimeZone($config['timezone']));
 
         foreach ($config['handlers'] as $processor) {
-            $logger->pushHandler($container->get($processor));
+            $resolvedProcessor = $container->get($processor);
+            assert($resolvedProcessor instanceof HandlerInterface);
+            $logger->pushHandler($resolvedProcessor);
         }
 
         foreach ($config['processors'] as $processor) {
-            $logger->pushProcessor($container->get($processor));
+            $resolvedProcessor = $container->get($processor);
+            assert($resolvedProcessor instanceof ProcessorInterface);
+            $logger->pushProcessor($resolvedProcessor);
         }
 
         return $logger;
