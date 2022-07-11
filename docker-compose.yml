@@ -1,0 +1,85 @@
+version: "3.8"
+
+x-templates:
+  default-variables: &default-variables
+    TZ: Europe/Berlin
+  default-service: &default-service
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    init: true
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      <<: *default-variables
+  as-current-user: &as-current-user
+    user: ${UID:-1000}:${GID:-1000}
+
+services:
+
+  # PHP
+  app:
+    <<: *default-service
+    <<: *as-current-user
+    image: columbusinteractive/php-swoole:8.1
+    container_name: swoole-app
+    environment:
+      <<: *default-variables
+      PHP_IDE_CONFIG: serverName=app
+    depends_on:
+      - db
+      - redis
+      - mailhog
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/php/app.ini:/usr/local/etc/php/conf.d/app.ini:ro
+    networks:
+      - app
+      - entry
+
+  # PostgreSQL
+  db:
+    <<: *default-service
+    image: postgres:13-alpine
+    container_name: swoole-db
+    environment:
+      <<: *default-variables
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - app
+
+  # Redis
+  redis:
+    <<: *default-service
+    image: redis:7-alpine
+    container_name: swoole-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app
+
+  # MailHog
+  mailhog:
+    <<: *default-service
+    image: mailhog/mailhog:latest
+    container_name: swoole-mailhog
+    ports:
+      - "8025:8025"
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
+  entry:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
