@@ -15,7 +15,7 @@ final class StreamHandlerFactory
 {
     public function __invoke(ContainerInterface $container): StreamHandler
     {
-        $config = $container->get('logger-listener');
+        $config = $container->get('config');
         assert(is_array($config));
         $handler = $config['handlers'][StreamHandler::class] ?? null;
 

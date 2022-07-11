@@ -61,9 +61,9 @@ final class LoggerFactory
         $logger->setTimezone(new DateTimeZone($config['timezone']));
 
         foreach ($config['handlers'] as $processor) {
-            $resolvedProcessor = $container->get($processor);
-            assert($resolvedProcessor instanceof HandlerInterface);
-            $logger->pushHandler($resolvedProcessor);
+            $resolvedHandler = $container->get($processor);
+            assert($resolvedHandler instanceof HandlerInterface);
+            $logger->pushHandler($resolvedHandler);
         }
 
         foreach ($config['processors'] as $processor) {
