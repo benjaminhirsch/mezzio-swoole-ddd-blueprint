@@ -3,6 +3,7 @@ version: "3.8"
 x-templates:
   default-variables: &default-variables
     TZ: Europe/Berlin
+    APP_ENV: development
   default-service: &default-service
     restart: unless-stopped
     tty: true
@@ -26,6 +27,7 @@ services:
     environment:
       <<: *default-variables
       PHP_IDE_CONFIG: serverName=app
+    working_dir: /var/www/html
     depends_on:
       - db
       - redis
@@ -33,6 +35,8 @@ services:
     volumes:
       - ./app:/var/www/html
       - ./docker/php/app.ini:/usr/local/etc/php/conf.d/app.ini:ro
+    ports:
+      - "80:9501"
     networks:
       - app
       - entry
