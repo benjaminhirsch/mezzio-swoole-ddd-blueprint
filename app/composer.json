@@ -106,6 +106,7 @@
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "serve": "laminas mezzio:swoole:reload",
+        "serve-php": "php -S 0.0.0.0:9501 -t public/",
         "stop": "laminas mezzio:swoole:stop",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"

@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Domain\Repository as RepositoryInterface;
 use App\Factory\Database\PdoFactory;
 use App\Infrastructure\Command\FactoryGenerator;
+use App\Infrastructure\Repository;
 use App\Infrastructure\Response\HtmlResponseRenderer;
 use App\Infrastructure\Response\ResponseRenderer;
 use Laminas\Di\InjectorInterface;
@@ -49,7 +51,10 @@ class ConfigProvider
                     'directory' => __DIR__ . '/../AppAoT',
                 ],
             ],
-            'aliases' => [ResponseRenderer::class => HtmlResponseRenderer::class],
+            'aliases' => [
+                ResponseRenderer::class => HtmlResponseRenderer::class,
+                RepositoryInterface\User::class => Repository\User::class,
+            ],
             'factories' => array_merge($this->getGeneratedFactories(), [
                 PDO::class => PdoFactory::class,
             ]),

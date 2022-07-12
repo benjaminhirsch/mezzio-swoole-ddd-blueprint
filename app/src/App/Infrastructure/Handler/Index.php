@@ -4,42 +4,24 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Handler;
 
+use App\Domain\Repository\User as UserRepository;
 use App\Infrastructure\Response\ResponseRenderer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Psr\Log\LoggerInterface;
-use Swoole\Coroutine\PostgreSQL;
-
-use function go;
 
 final class Index implements RequestHandlerInterface
 {
     public function __construct(
         private readonly ResponseRenderer $renderer,
-        private readonly PostgreSQL $PDO,
-        private readonly LoggerInterface $logger
+        private readonly UserRepository $user,
     ) {
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $response = null;
-        go(function () use (&$response): void {
-            $this->PDO->prepare('my_query', 'select * from items');
-
-            // Bind the array data to the placeholders in the query
-            $res = $this->PDO->execute('my_query', []);
-
-            $response = $this->PDO->fetchAll($res);
-
-          //  $response = $this->renderer->render('app::index', $request, ['foo' => $erg]);
-        });
-
-//        $this->PDO->prepare('wtf', 'select * from items');
-//        $res = $this->PDO->execute('wtf', []);
-//        //var_dump($this->PDO->fetchAll($res));
-
-        return $this->renderer->render('app::index', $request, ['foo' => $response]);
+        return $this->renderer->render('app::index', $request, [
+            'foo' => $this->user->getById('6b676d56-c85b-47b3-bbb6-1e3ff07c1643'),
+        ]);
     }
 }
