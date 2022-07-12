@@ -6,8 +6,8 @@ namespace App\Factory\Database;
 
 use App\Domain\Exception\MissingConfiguration;
 use App\Domain\Exception\Runtime;
+use PDO;
 use Psr\Container\ContainerInterface;
-use Swoole\Coroutine\PostgreSQL;
 
 use function assert;
 use function is_array;
@@ -15,7 +15,7 @@ use function sprintf;
 
 final class PdoFactory
 {
-    public function __invoke(ContainerInterface $container): PostgreSQL
+    public function __invoke(ContainerInterface $container): PDO
     {
         if (! $container->has('config')) {
             throw Runtime::create('Missing application config!');
@@ -52,16 +52,11 @@ final class PdoFactory
             throw MissingConfiguration::create('Missing password (pass) in configuration');
         }
 
-            $pg = new PostgreSQL();
-            $pg->connect(sprintf(
-                'host=%s;port=%d;dbname=%s;user=%s;password=%s',
-                $defaultConnectionConfig['host'],
-                $defaultConnectionConfig['port'],
-                $defaultConnectionConfig['dbname'],
-                $defaultConnectionConfig['user'],
-                $defaultConnectionConfig['pass'],
-            ));
-
-            return $pg;
+        return new PDO(sprintf(
+            '%s:host=%s;dbname=%s',
+            $defaultConnectionConfig['adapter'],
+            $defaultConnectionConfig['host'],
+            $defaultConnectionConfig['dbname'],
+        ), $defaultConnectionConfig['user'], $defaultConnectionConfig['pass'], $defaultConnectionConfig['options'] ?? null);
     }
 }
