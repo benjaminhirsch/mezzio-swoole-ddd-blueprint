@@ -29,6 +29,8 @@
         <main class="container">
             {% block content %}{% endblock %}
         </main>
+
+        {{ showFlashMessages()|raw }}
     </div>
 
     <footer class="app-footer">

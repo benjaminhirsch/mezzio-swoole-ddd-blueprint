@@ -64,6 +64,7 @@
         "mezzio/mezzio-authentication": "^1.4",
         "mezzio/mezzio-authentication-session": "^1.4",
         "mezzio/mezzio-fastroute": "^3.0.3",
+        "mezzio/mezzio-flash": "^1.3",
         "mezzio/mezzio-helpers": "^5.7",
         "mezzio/mezzio-session": "^1.6",
         "mezzio/mezzio-session-cache": "^1.7",

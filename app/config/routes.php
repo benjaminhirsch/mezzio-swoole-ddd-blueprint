@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
+use App\Domain\Enum\FlashTypes;
 use App\Infrastructure\Handler;
 use App\Infrastructure\Middleware\Template;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Application;
 use Mezzio\Authentication\AuthenticationMiddleware;
 use Mezzio\Authentication\UserInterface;
+use Mezzio\Flash\FlashMessageMiddleware;
+use Mezzio\Flash\FlashMessagesInterface;
 use Mezzio\MiddlewareFactory;
 use Mezzio\Session\SessionInterface;
 use Psr\Container\ContainerInterface;
@@ -59,7 +62,19 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
     ], 'login');
     $app->post('/login', [
         AuthenticationMiddleware::class,
-        static fn(ServerRequestInterface $request, RequestHandlerInterface $handler) => new RedirectResponse('/'),
+        static function(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
+
+            $flash = $request->getAttribute(FlashMessageMiddleware::FLASH_ATTRIBUTE);
+            assert($flash instanceof FlashMessagesInterface);
+
+
+            $flash->flash(FlashTypes::INFO->value, [
+                'title' => _('Login'),
+                'body' => _('Successfully logged in!'),
+            ]);
+
+            return new RedirectResponse('/');
+        }
     ], 'authenticate');
 
     $app->post('/logout', [

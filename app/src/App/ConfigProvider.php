@@ -7,11 +7,14 @@ namespace App;
 use App\Domain\Repository as RepositoryInterface;
 use App\Factory\Cache\PdoAdapterFactory;
 use App\Factory\Database\PdoFactory;
+use App\Factory\Middleware\Template\Extension\FlashFactory;
 use App\Factory\Reponse\HtmlResponseRendererFactory;
 use App\Factory\Reponse\TemplateRendererInterfaceFactory;
 use App\Infrastructure\Command\FactoryGenerator;
 use App\Infrastructure\Middleware\Template\Extension\Authentication;
+use App\Infrastructure\Middleware\Template\Extension\Flash;
 use App\Infrastructure\Repository;
+use App\Infrastructure\Response\HtmlRenderer;
 use App\Infrastructure\Response\HtmlResponseRenderer;
 use App\Infrastructure\Response\ResponseRenderer;
 use Laminas\Di\InjectorInterface;
@@ -101,7 +104,8 @@ class ConfigProvider
                 HtmlResponseRenderer::class => HtmlResponseRendererFactory::class,
                 PDO::class => PdoFactory::class,
                 PdoAdapter::class => PdoAdapterFactory::class,
-                'html-renderer' => TemplateRendererInterfaceFactory::class,
+                HtmlRenderer::class => TemplateRendererInterfaceFactory::class,
+                Flash::class => FlashFactory::class,
             ]),
             'delegators' => [
                 InjectorInterface::class => [
@@ -129,6 +133,7 @@ class ConfigProvider
             'cache_dir' => $debugMode ? false : 'data/cache/twig',
             'extensions' => [
                 Authentication::class,
+                Flash::class,
             ],
         ];
     }

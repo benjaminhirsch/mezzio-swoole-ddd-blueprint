@@ -118,6 +118,7 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
+      <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-flash" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
