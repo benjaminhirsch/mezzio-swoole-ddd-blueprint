@@ -13,6 +13,7 @@ use Mezzio\Router\Middleware\ImplicitHeadMiddleware;
 use Mezzio\Router\Middleware\ImplicitOptionsMiddleware;
 use Mezzio\Router\Middleware\MethodNotAllowedMiddleware;
 use Mezzio\Router\Middleware\RouteMiddleware;
+use Mezzio\Session\SessionMiddleware;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -66,6 +67,7 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
     // - route-based authentication
     // - route-based validation
     // - etc.
+    $app->pipe(SessionMiddleware::class);
 
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);

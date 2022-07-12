@@ -3,22 +3,16 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    <form action="{{ url("authenticate") }}" method="post">
+        <input type="email" name="identity" autofocus>
+        <input type="password" name="password">
+        <input type="submit">
+    </form>
 
     {% if isLoggedIn() %}
         Logged in
-
-        <hr/>
-
-        Hello {{ currentUser().identity }}
-        
     {% else %}
         Not logged in
     {% endif %}
-
-    <hr />
-
-    <form action="{{ url("logout") }}" method="post"/>
-        <input type="submit" value="Logout"/>
-    </form>
 
 {% endblock %}

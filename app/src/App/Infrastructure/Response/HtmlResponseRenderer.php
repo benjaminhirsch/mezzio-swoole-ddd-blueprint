@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace App\Infrastructure\Response;
 
 use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 final class HtmlResponseRenderer implements ResponseRenderer
 {
-    private TemplateRendererInterface $templateRenderer;
+    /** @var callable */
+    private $rendererFactory;
 
-    public function __construct(TemplateRendererInterface $templateRenderer)
+    public function __construct(callable $rendererFactory)
     {
-        $this->templateRenderer = $templateRenderer;
+        $this->rendererFactory = $rendererFactory;
     }
 
     /**
@@ -23,6 +23,8 @@ final class HtmlResponseRenderer implements ResponseRenderer
      */
     public function render(string $name, ServerRequestInterface $request, array $params = [], int $statusCode = 200): ResponseInterface
     {
-        return new HtmlResponse($this->templateRenderer->render($name, $params), $statusCode);
+        $renderer = ($this->rendererFactory)();
+
+        return new HtmlResponse($renderer->render($name, $params), $statusCode);
     }
 }

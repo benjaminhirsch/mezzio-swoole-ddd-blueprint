@@ -2,10 +2,19 @@
 
 declare(strict_types=1);
 
-use Mezzio\Application;
-use Mezzio\MiddlewareFactory;
-use Psr\Container\ContainerInterface;
 use App\Infrastructure\Handler;
+use App\Infrastructure\Middleware\Template;
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Application;
+use Mezzio\Authentication\AuthenticationMiddleware;
+use Mezzio\Authentication\UserInterface;
+use Mezzio\MiddlewareFactory;
+use Mezzio\Session\SessionInterface;
+use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+
 /**
  * FastRoute route configuration
  *
@@ -38,5 +47,31 @@ use App\Infrastructure\Handler;
  */
 
 return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
-    $app->get('/', Handler\Index::class, 'home');
+    $app->get('/', [
+        AuthenticationMiddleware::class,
+        Template\Extension\Authentication::class,
+        Handler\Index::class,
+    ], 'home');
+
+    $app->get('/login', [
+        Template\Extension\Authentication::class,
+        Handler\Login::class,
+    ], 'login');
+    $app->post('/login', [
+        AuthenticationMiddleware::class,
+        static fn(ServerRequestInterface $request, RequestHandlerInterface $handler) => new RedirectResponse('/'),
+    ], 'authenticate');
+
+    $app->post('/logout', [
+        AuthenticationMiddleware::class,
+        static function(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
+            $session = $request->getAttribute('session');
+            assert($session instanceof SessionInterface);
+
+            if ($session->has(UserInterface::class)) {
+                $session->clear();
+            }
+            return new RedirectResponse('/');
+        },
+    ], 'logout');
 };

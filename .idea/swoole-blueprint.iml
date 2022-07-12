@@ -110,6 +110,14 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/datasource" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/core" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/cakephp/database" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-session" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-session-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-authentication" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

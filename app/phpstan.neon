@@ -5,3 +5,4 @@ parameters:
         - test
     excludePaths:
         - src/App/InjectorDecoratorFactory.php
+        - src/AppAoT

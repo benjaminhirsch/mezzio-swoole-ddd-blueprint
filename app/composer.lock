@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "505e56ea9279804c6372c941d63ea144",
+    "content-hash": "1aa6354e5f2a34e0b85f97511394d9f1",
     "packages": [
         {
             "name": "brick/math",
@@ -1434,6 +1434,157 @@
             "time": "2022-06-29T21:47:57+00:00"
         },
         {
+            "name": "mezzio/mezzio-authentication",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-authentication.git",
+                "reference": "ff62fa71b95b4e3816fc8668f002fb11b7f61dd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-authentication/zipball/ff62fa71b95b4e3816fc8668f002fb11b7f61dd0",
+                "reference": "ff62fa71b95b4e3816fc8668f002fb11b7f61dd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ~8.0.0 || ~8.1.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/http-message": "^1.0.1",
+                "psr/http-server-middleware": "^1.0",
+                "webmozart/assert": "^1.9"
+            },
+            "conflict": {
+                "container-interop/container-interop": "<1.2.0",
+                "zendframework/zend-expressive-authentication": "*"
+            },
+            "require-dev": {
+                "ext-sqlite3": "*",
+                "laminas/laminas-coding-standard": "~2.3.0",
+                "phpspec/prophecy": "^1.14",
+                "phpspec/prophecy-phpunit": "^v2.0.1",
+                "phpunit/phpunit": "^9.5.11",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.17.0"
+            },
+            "suggest": {
+                "ext-pdo": "*: for use with the PDO-backed UserRepositoryInterface implementation",
+                "mezzio/mezzio-authentication-basic": "Provides an HTTP Basic Authentication AuthenticationInterface implementation",
+                "mezzio/mezzio-authentication-laminasauthentication": "Provides a laminas-authentication AuthenticationInterface implementation",
+                "mezzio/mezzio-authentication-session": "Provides a username/password + session AuthenticationInterface implementation"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Mezzio\\Authentication\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\Authentication\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Authentication middleware for Mezzio and PSR-7 applications",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "Authentication",
+                "http",
+                "laminas",
+                "mezzio",
+                "middleware",
+                "psr-15",
+                "psr-7"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.mezzio.dev/mezzio-authentication/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/mezzio/mezzio-authentication/issues",
+                "rss": "https://github.com/mezzio/mezzio-authentication/releases.atom",
+                "source": "https://github.com/mezzio/mezzio-authentication"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-01-07T18:51:08+00:00"
+        },
+        {
+            "name": "mezzio/mezzio-authentication-session",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-authentication-session.git",
+                "reference": "3a0d1de3dd245eb3e70774928d82c5752ea544c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-authentication-session/zipball/3a0d1de3dd245eb3e70774928d82c5752ea544c9",
+                "reference": "3a0d1de3dd245eb3e70774928d82c5752ea544c9",
+                "shasum": ""
+            },
+            "require": {
+                "mezzio/mezzio-authentication": "^1.3",
+                "mezzio/mezzio-session": "^1.6",
+                "php": "^7.4 || ~8.0.0 || ~8.1.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0.1",
+                "webmozart/assert": "^1.10"
+            },
+            "conflict": {
+                "zendframework/zend-expressive-authentication-session": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.3.0",
+                "phpunit/phpunit": "^9.5.11"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Mezzio\\Authentication\\Session\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\Authentication\\Session\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Username/password, session-backed authentication adapter for mezzio-authentication.",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "Authentication",
+                "laminas",
+                "mezzio",
+                "session"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.mezzio.dev/mezzio-authentication-session/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/mezzio/mezzio-authentication-session/issues",
+                "rss": "https://github.com/mezzio/mezzio-authentication-session/releases.atom",
+                "source": "https://github.com/mezzio/mezzio-authentication-session"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-03-30T20:01:12+00:00"
+        },
+        {
             "name": "mezzio/mezzio-fastroute",
             "version": "3.5.0",
             "source": {
@@ -1672,6 +1823,155 @@
                 }
             ],
             "time": "2022-01-06T16:27:49+00:00"
+        },
+        {
+            "name": "mezzio/mezzio-session",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-session.git",
+                "reference": "982db6a20edd908598ef4193d6856bda25adb0e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-session/zipball/982db6a20edd908598ef4193d6856bda25adb0e3",
+                "reference": "982db6a20edd908598ef4193d6856bda25adb0e3",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/fig-cookies": "^2.0.1 || ^3.0",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0",
+                "psr/container": "^1.0|^2.0",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "conflict": {
+                "zendframework/zend-expressive-session": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.2.0",
+                "laminas/laminas-diactoros": "^2.2",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.10"
+            },
+            "suggest": {
+                "mezzio/mezzio-csrf": "^1.0 || ^1.0-dev for CSRF protection capabilities",
+                "mezzio/mezzio-flash": "^1.0 || ^1.0-dev for flash message capabilities",
+                "mezzio/mezzio-session-ext": "^1.0 || ^1.0-dev for an ext-session persistence adapter"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Mezzio\\Session\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\Session\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Session container and middleware for PSR-7 applications",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "laminas",
+                "mezzio",
+                "middleware",
+                "psr-7",
+                "session"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.mezzio.dev/mezzio-session/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/mezzio/mezzio-session/issues",
+                "rss": "https://github.com/mezzio/mezzio-session/releases.atom",
+                "source": "https://github.com/mezzio/mezzio-session"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-09-15T13:46:47+00:00"
+        },
+        {
+            "name": "mezzio/mezzio-session-cache",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-session-cache.git",
+                "reference": "68c2fd82cbb5a281d35c3ba65ffd38df072ab40f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-session-cache/zipball/68c2fd82cbb5a281d35c3ba65ffd38df072ab40f",
+                "reference": "68c2fd82cbb5a281d35c3ba65ffd38df072ab40f",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/fig-cookies": "^2.0.1 || ^3.0.0",
+                "mezzio/mezzio-session": "^1.4",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/container": "^1.0 || ^2.0 || ^3.0"
+            },
+            "conflict": {
+                "zendframework/zend-expressive-session-cache": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.2.0",
+                "laminas/laminas-diactoros": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.10"
+            },
+            "suggest": {
+                "psr/cache-implementation": "This package requires a PSR-6 CacheItemPoolInterface implementation."
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Mezzio\\Session\\Cache\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\Session\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "PSR-6 session persistence adapter for mezzio-session.",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "cache",
+                "laminas",
+                "mezzio",
+                "psr-6",
+                "session"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.mezzio.dev/mezzio-session-cache/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/mezzio/mezzio-session-cache/issues",
+                "rss": "https://github.com/mezzio/mezzio-session-cache/releases.atom",
+                "source": "https://github.com/mezzio/mezzio-session-cache"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-12-26T18:41:55+00:00"
         },
         {
             "name": "mezzio/mezzio-swoole",
@@ -2105,6 +2405,55 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
             },
             "time": "2022-05-31T20:59:12+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/3.0.0"
+            },
+            "time": "2021-02-03T23:26:27+00:00"
         },
         {
             "name": "psr/container",
@@ -2899,6 +3248,181 @@
                 "source": "https://github.com/cakephp/phinx/tree/0.12.11"
             },
             "time": "2022-07-03T16:41:43+00:00"
+        },
+        {
+            "name": "symfony/cache",
+            "version": "v6.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache.git",
+                "reference": "7d8415956df68c8dcbc9468e119945e39bacead1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/7d8415956df68c8dcbc9468e119945e39bacead1",
+                "reference": "7d8415956df68c8dcbc9468e119945e39bacead1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/cache": "^2.0|^3.0",
+                "psr/log": "^1.1|^2|^3",
+                "symfony/cache-contracts": "^1.1.7|^2|^3",
+                "symfony/service-contracts": "^1.1|^2|^3",
+                "symfony/var-exporter": "^5.4|^6.0"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.13.1",
+                "symfony/dependency-injection": "<5.4",
+                "symfony/http-kernel": "<5.4",
+                "symfony/var-dumper": "<5.4"
+            },
+            "provide": {
+                "psr/cache-implementation": "2.0|3.0",
+                "psr/simple-cache-implementation": "1.0|2.0|3.0",
+                "symfony/cache-implementation": "1.1|2.0|3.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "dev-master",
+                "doctrine/dbal": "^2.13.1|^3.0",
+                "predis/predis": "^1.1",
+                "psr/simple-cache": "^1.0|^2.0|^3.0",
+                "symfony/config": "^5.4|^6.0",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/filesystem": "^5.4|^6.0",
+                "symfony/http-kernel": "^5.4|^6.0",
+                "symfony/messenger": "^5.4|^6.0",
+                "symfony/var-dumper": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Cache\\": ""
+                },
+                "classmap": [
+                    "Traits/ValueWrapper.php"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an extended PSR-6, PSR-16 (and tags) implementation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "caching",
+                "psr6"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/cache/tree/v6.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-19T13:21:48+00:00"
+        },
+        {
+            "name": "symfony/cache-contracts",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache-contracts.git",
+                "reference": "2eab7fa459af6d75c6463e63e633b667a9b761d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/2eab7fa459af6d75c6463e63e633b667a9b761d3",
+                "reference": "2eab7fa459af6d75c6463e63e633b667a9b761d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/cache": "^3.0"
+            },
+            "suggest": {
+                "symfony/cache-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.1-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Cache\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to caching",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/cache-contracts/tree/v3.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-02-25T11:15:52+00:00"
         },
         {
             "name": "symfony/config",
@@ -4024,6 +4548,78 @@
                 }
             ],
             "time": "2022-06-26T16:35:04+00:00"
+        },
+        {
+            "name": "symfony/var-exporter",
+            "version": "v6.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-exporter.git",
+                "reference": "ce1452317b1210ddfe18d143fa8a09c18f034b89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/ce1452317b1210ddfe18d143fa8a09c18f034b89",
+                "reference": "ce1452317b1210ddfe18d143fa8a09c18f034b89",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\VarExporter\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Allows exporting any serializable PHP data structure to plain PHP code",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "clone",
+                "construct",
+                "export",
+                "hydrate",
+                "instantiate",
+                "serialize"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-exporter/tree/v6.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-27T12:58:07+00:00"
         },
         {
             "name": "twig/twig",
@@ -7365,11 +7961,17 @@
     "platform": {
         "php": "~8.1.0",
         "ext-curl": "*",
+        "ext-date": "*",
         "ext-fileinfo": "*",
+        "ext-gettext": "*",
         "ext-intl": "*",
+        "ext-openswoole": "^4.11",
         "ext-pdo": "*",
+        "ext-pdo_pgsql": "*",
         "ext-zlib": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {
+        "ext-inotify": "^3.0"
+    },
     "plugin-api-version": "2.3.0"
 }
