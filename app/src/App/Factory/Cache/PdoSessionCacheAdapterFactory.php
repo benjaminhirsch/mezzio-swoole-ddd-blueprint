@@ -11,7 +11,7 @@ use Symfony\Component\Cache\Adapter\PdoAdapter;
 
 use function assert;
 
-final class PdoAdapterFactory
+final class PdoSessionCacheAdapterFactory
 {
     public function __invoke(ContainerInterface $container): PdoAdapter
     {
@@ -22,6 +22,6 @@ final class PdoAdapterFactory
         $pdo = $container->get(PDO::class);
         assert($pdo instanceof PDO);
 
-        return new PdoAdapter($pdo);
+        return new PdoAdapter($pdo, '', 0, ['db_table' => 'user_sessions']);
     }
 }

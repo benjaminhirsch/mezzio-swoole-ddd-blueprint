@@ -19,16 +19,14 @@ final class Flash extends AbstractExtension implements MiddlewareInterface
 {
     /** @var callable */
     private $rendererFactory;
-    private null|FlashMessagesInterface $flashMessages;
+    private FlashMessagesInterface|null $flashMessages;
 
     public function __construct(callable $rendererFactory)
     {
         $this->rendererFactory = $rendererFactory;
     }
 
-    /**
-     * @return TwigFunction[]
-     */
+    /** @return TwigFunction[] */
     public function getFunctions(): array
     {
         return [
@@ -36,7 +34,7 @@ final class Flash extends AbstractExtension implements MiddlewareInterface
         ];
     }
 
-    public function showFlashMessages(null|string $flashType = null): ?string
+    public function showFlashMessages(string|null $flashType = null): string|null
     {
         $renderer = ($this->rendererFactory)();
 

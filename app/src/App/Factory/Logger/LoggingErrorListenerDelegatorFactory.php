@@ -9,10 +9,8 @@ use Laminas\Stratigility\Middleware\ErrorHandler;
 
 final class LoggingErrorListenerDelegatorFactory
 {
-    /**
-     * @param mixed[]|null $options
-     */
-    public function __invoke(ContainerInterface $container, string $name, callable $callback, ?array $options = null): ErrorHandler
+    /** @param mixed[]|null $options */
+    public function __invoke(ContainerInterface $container, string $name, callable $callback, array|null $options = null): ErrorHandler
     {
         $handler = $callback();
         $handler->attachListener($container->get('logger-listener'));

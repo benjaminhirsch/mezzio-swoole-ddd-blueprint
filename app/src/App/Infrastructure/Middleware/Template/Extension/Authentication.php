@@ -16,11 +16,9 @@ use function assert;
 
 final class Authentication extends AbstractExtension implements MiddlewareInterface
 {
-    private null|UserInterface $user = null;
+    private UserInterface|null $user = null;
 
-    /**
-     * @return TwigFunction[]
-     */
+    /** @return TwigFunction[] */
     public function getFunctions(): array
     {
         return [

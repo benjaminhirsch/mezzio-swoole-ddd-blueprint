@@ -5,20 +5,12 @@
 {% block content %}
 
     {% if isLoggedIn() %}
-        Logged in
-
-        <hr/>
-
-        Hello {{ currentUser().identity }}
-
-    {% else %}
-        Not logged in
+        <strong>Logged in</strong>
+        <h1 class="my-3">Hello {{ currentUser().identity }}</h1>
     {% endif %}
 
-    <hr />
-
     <form action="{{ url("logout") }}" method="post"/>
-        <input type="submit" value="Logout"/>
+        <input class="btn btn-primary" type="submit" value="Logout"/>
     </form>
 
 {% endblock %}

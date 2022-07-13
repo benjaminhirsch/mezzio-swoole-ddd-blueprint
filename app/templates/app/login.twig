@@ -1,18 +1,24 @@
 {% extends '@layout/default.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
-    <form action="{{ url("authenticate") }}" method="post">
-        <input type="email" name="identity" autofocus>
-        <input type="password" name="password">
-        <input type="submit">
-    </form>
 
-    {% if isLoggedIn() %}
-        Logged in
-    {% else %}
-        Not logged in
-    {% endif %}
+    <form action="{{ url("authenticate") }}" method="post">
+        <div class="mb-3">
+            <label for="identity" class="form-label">Identity</label>
+            <input class="form-control" type="email" name="identity" id="identity" autofocus>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input class="form-control" type="password" name="password" id="password">
+        </div>
+        <input type="submit" class="btn btn-primary">
+
+        <hr />
+
+        <strong>No account?</strong>
+        <a href="{{ url("register") }}">Register</a>
+    </form>
 
 {% endblock %}

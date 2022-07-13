@@ -7,6 +7,8 @@ if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {
     return false;
 }
 
+Co::set(['hook_flags' => SWOOLE_HOOK_TCP]);
+
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 

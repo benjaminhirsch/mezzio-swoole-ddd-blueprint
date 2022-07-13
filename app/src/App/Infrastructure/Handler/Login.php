@@ -11,7 +11,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class Login implements RequestHandlerInterface
 {
-    public function __construct(private readonly ResponseRenderer $renderer)
+    public function __construct(private ResponseRenderer $renderer)
     {
     }
 

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
   <component name="PhpCodeSniffer">
     <phpcs_settings>
       <PhpCSConfiguration tool_path="$PROJECT_DIR$/app/vendor/bin/phpcs" />
@@ -8,15 +17,8 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/app/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/app/vendor/webimpress/safe-writer" />
-      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/app/vendor/composer" />
       <path value="$PROJECT_DIR$/app/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/app/vendor/psr/http-server-handler" />
@@ -28,7 +30,6 @@
       <path value="$PROJECT_DIR$/app/vendor/psr/container" />
       <path value="$PROJECT_DIR$/app/vendor/brick/varexporter" />
       <path value="$PROJECT_DIR$/app/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/app/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/app/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-fastroute" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-template" />
@@ -37,9 +38,7 @@
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-helpers" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-twigrenderer" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio" />
-      <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-tooling" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-config-aggregator" />
-      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-development-mode" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-component-installer" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-stdlib" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-httphandlerrunner" />
@@ -47,20 +46,8 @@
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-escaper" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-diactoros" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-cli" />
-      <path value="$PROJECT_DIR$/app/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-stratigility" />
-      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-code" />
-      <path value="$PROJECT_DIR$/app/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/app/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/app/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-invoker" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/app/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-normalizer" />
@@ -71,23 +58,8 @@
       <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/app/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/app/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/app/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/app/vendor/dflydev/fig-cookies" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-swoole" />
-      <path value="$PROJECT_DIR$/app/vendor/openswoole/ide-helper" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-di" />
       <path value="$PROJECT_DIR$/app/vendor/roave/better-reflection" />
       <path value="$PROJECT_DIR$/app/vendor/roave/signature" />
@@ -95,21 +67,6 @@
       <path value="$PROJECT_DIR$/app/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/app/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/app/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/app/vendor/squizlabs/php_codesniffer" />
-      <path value="$PROJECT_DIR$/app/vendor/slevomat/coding-standard" />
-      <path value="$PROJECT_DIR$/app/vendor/doctrine/coding-standard" />
-      <path value="$PROJECT_DIR$/app/vendor/dealerdirect/phpcodesniffer-composer-installer" />
-      <path value="$PROJECT_DIR$/app/vendor/phpstan/phpdoc-parser" />
-      <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/app/vendor/phpstan/phpstan" />
-      <path value="$PROJECT_DIR$/app/vendor/robmorgan/phinx" />
-      <path value="$PROJECT_DIR$/app/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/config" />
-      <path value="$PROJECT_DIR$/app/vendor/cakephp/utility" />
-      <path value="$PROJECT_DIR$/app/vendor/cakephp/datasource" />
-      <path value="$PROJECT_DIR$/app/vendor/cakephp/core" />
-      <path value="$PROJECT_DIR$/app/vendor/cakephp/database" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-session" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-session-cache" />
       <path value="$PROJECT_DIR$/app/vendor/psr/cache" />
@@ -119,6 +76,58 @@
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-flash" />
+      <path value="$PROJECT_DIR$/app/vendor/platformsh/config-reader" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-tooling" />
+      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-inputfilter" />
+      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-validator" />
+      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-filter" />
+      <path value="$PROJECT_DIR$/app/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/app/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/app/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/app/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/app/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/app/vendor/slevomat/coding-standard" />
+      <path value="$PROJECT_DIR$/app/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-development-mode" />
+      <path value="$PROJECT_DIR$/app/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/coding-standard" />
+      <path value="$PROJECT_DIR$/app/vendor/openswoole/ide-helper" />
+      <path value="$PROJECT_DIR$/app/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/app/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/database" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/datasource" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/utility" />
+      <path value="$PROJECT_DIR$/app/vendor/cakephp/core" />
+      <path value="$PROJECT_DIR$/app/vendor/robmorgan/phinx" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -212,9 +221,17 @@
       <phpstan_by_interpreter interpreter_id="27ec5f3c-a4cd-4d36-aeac-51783ad1b46b" tool_path="/var/www/html/vendor/bin/phpstan" timeout="60000" />
     </PhpStan_settings>
   </component>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="config" value="$PROJECT_DIR$/app/phpstan.neon" />
+    <option name="level" value="8" />
+    <option name="transferred" value="true" />
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/app/vendor/autoload.php" />
     </phpunit_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
 </project>

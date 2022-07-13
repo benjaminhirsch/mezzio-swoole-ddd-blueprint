@@ -54,4 +54,25 @@ return [
             'mode' => SWOOLE_PROCESS,
         ],
     ],
+    'database' => [
+        'default' => [
+            'adapter' => 'pgsql',
+            'dbname' => 'app',
+            'host' => 'db',
+            'port' => 5432,
+            'user' => 'app',
+            'pass' => 'app',
+        ],
+    ],
+    'redis' => [
+        'default' => [
+            'host' => 'redis',
+            'port' => 6379,
+            'timeout' => 0,
+            'persistentId' => null,
+            'retryInterval' => 0,
+            'readTimeout' => 0,
+            'context' => [],
+        ],
+    ],
 ];

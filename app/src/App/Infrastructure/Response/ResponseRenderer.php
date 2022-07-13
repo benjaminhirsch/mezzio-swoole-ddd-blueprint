@@ -9,8 +9,6 @@ use Psr\Http\Message\ServerRequestInterface;
 
 interface ResponseRenderer
 {
-    /**
-     * @param mixed[] $params
-     */
+    /** @param mixed[] $params */
     public function render(string $name, ServerRequestInterface $request, array $params = [], int $statusCode = 200): ResponseInterface;
 }

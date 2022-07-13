@@ -25,31 +25,31 @@ final class LoggerListenerFactory
 
         if ($loggerConfig === null) {
             throw new MissingConfiguration(
-                'Logger values are missing in config'
+                'Logger values are missing in config',
             );
         }
 
         if (! isset($loggerConfig['channel'])) {
             throw new MissingConfiguration(
-                'The channel name for the loggerConfig is missing in the configuration'
+                'The channel name for the loggerConfig is missing in the configuration',
             );
         }
 
         if (! isset($loggerConfig['handlers'])) {
             throw new MissingConfiguration(
-                'Missing handlers configuration for the loggerConfig'
+                'Missing handlers configuration for the loggerConfig',
             );
         }
 
         if (! isset($loggerConfig['processors'])) {
             throw new MissingConfiguration(
-                'Missing processors configuration for the loggerConfig'
+                'Missing processors configuration for the loggerConfig',
             );
         }
 
         if (! isset($loggerConfig['timezone'])) {
             throw new MissingConfiguration(
-                'Missing timezone configuration for the loggerConfig'
+                'Missing timezone configuration for the loggerConfig',
             );
         }
 

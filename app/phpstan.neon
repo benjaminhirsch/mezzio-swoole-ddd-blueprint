@@ -1,4 +1,5 @@
 parameters:
+    checkGenericClassInNonGenericObjectType: false
     level: max
     paths:
         - src
@@ -6,3 +7,7 @@ parameters:
     excludePaths:
         - src/App/InjectorDecoratorFactory.php
         - src/AppAoT
+    ignoreErrors:
+        -
+            message: '#Method Redis::connect\(\) invoked with 7 parameters, 1-6 required.#'
+            path: src/App/Factory/Cache/RedisFactory.php

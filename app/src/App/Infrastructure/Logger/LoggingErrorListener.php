@@ -11,17 +11,14 @@ use Throwable;
 
 final class LoggingErrorListener
 {
-    private LoggerInterface $logger;
-
-    public function __construct(LoggerInterface $logger)
+    public function __construct(private LoggerInterface $logger)
     {
-        $this->logger = $logger;
     }
 
     public function __invoke(
         Throwable $throwable,
         ServerRequestInterface $serverRequest,
-        ResponseInterface $response
+        ResponseInterface $response,
     ): void {
         $this->logger->error(
             $throwable::class . ': ' . $throwable->getMessage(),
@@ -33,7 +30,7 @@ final class LoggingErrorListener
                 'previous_exception' => $throwable->getPrevious() !== null
                     ? (string) $throwable->getPrevious()
                     : null,
-            ]
+            ],
         );
     }
 }

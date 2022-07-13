@@ -17,6 +17,7 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use App\Infrastructure\Middleware;
 
 /**
  * FastRoute route configuration
@@ -67,7 +68,6 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
             $flash = $request->getAttribute(FlashMessageMiddleware::FLASH_ATTRIBUTE);
             assert($flash instanceof FlashMessagesInterface);
 
-
             $flash->flash(FlashTypes::INFO->value, [
                 'title' => _('Login'),
                 'body' => _('Successfully logged in!'),
@@ -89,4 +89,10 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
             return new RedirectResponse('/');
         },
     ], 'logout');
+
+    $app->any('/register', [
+        Middleware\User\Register::class,
+        Template\TemplateDefaults::class,
+        Handler\Register::class,
+    ], 'register');
 };

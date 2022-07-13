@@ -9,12 +9,12 @@ use Throwable;
 
 abstract class Runtime extends RuntimeException
 {
-    final public function __construct(string $message = '', int $code = 0, ?Throwable $previous = null)
+    final public function __construct(string $message = '', int $code = 0, Throwable|null $previous = null)
     {
         parent::__construct($message, $code, $previous);
     }
 
-    public static function create(string $message, int $code = 0, ?Throwable $previous = null): static
+    public static function create(string $message, int $code = 0, Throwable|null $previous = null): static
     {
         return new static($message, $code, $previous);
     }

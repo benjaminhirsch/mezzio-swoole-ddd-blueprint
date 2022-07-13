@@ -19,7 +19,7 @@ final class ApplicationLoggerFactory
 
         return LoggerFactory::createFromConfig(
             $container,
-            $config['application-logger'] ?? null
+            $config['application-logger'] ?? null,
         );
     }
 }

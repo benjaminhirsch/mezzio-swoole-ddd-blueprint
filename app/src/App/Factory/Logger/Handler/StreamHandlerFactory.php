@@ -21,37 +21,37 @@ final class StreamHandlerFactory
 
         if ($handler === null) {
             throw new MissingConfiguration(
-                'StreamHandler values are missing in config'
+                'StreamHandler values are missing in config',
             );
         }
 
         if (! isset($handler['stream'])) {
             throw new MissingConfiguration(
-                'Missing `stream` in the handler configuration'
+                'Missing `stream` in the handler configuration',
             );
         }
 
         if (! isset($handler['level'])) {
             throw new MissingConfiguration(
-                'Missing `level` in the handler configuration'
+                'Missing `level` in the handler configuration',
             );
         }
 
         if (! isset($handler['bubble'])) {
             throw new MissingConfiguration(
-                'Missing `bubble` in the handler configuration'
+                'Missing `bubble` in the handler configuration',
             );
         }
 
         if (! isset($handler['filePermission'])) {
             throw new MissingConfiguration(
-                'Missing `filePermission` in the handler configuration'
+                'Missing `filePermission` in the handler configuration',
             );
         }
 
         if (! isset($handler['useLocking'])) {
             throw new MissingConfiguration(
-                'Missing `useLocking` in the handler configuration'
+                'Missing `useLocking` in the handler configuration',
             );
         }
 
@@ -60,7 +60,7 @@ final class StreamHandlerFactory
             $handler['level'],
             $handler['bubble'],
             $handler['filePermission'],
-            $handler['useLocking']
+            $handler['useLocking'],
         );
     }
 }

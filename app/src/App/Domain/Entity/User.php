@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Model;
+namespace App\Domain\Entity;
 
 use DateTimeInterface;
 use Ramsey\Uuid\UuidInterface;

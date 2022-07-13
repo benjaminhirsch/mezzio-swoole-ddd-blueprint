@@ -1,0 +1,10 @@
+<label for="{{ fieldId }}" class="form-label">{{ fieldLabel }}</label>
+{% set messages =  inputFilter.getMessages() %}
+<input class="form-control{% if messages[fieldId] is defined %} is-invalid{% endif %}" type="{{ type }}" name="{{ fieldId }}" value="{{ inputFilter.getValue(fieldId) }}" id="{{ fieldId }}">
+{% if messages[fieldId] is defined %}
+    <div class="invalid-feedback">
+        {% for message in messages[fieldId] %}
+            <p>{{ message }}</p>
+         {% endfor %}
+    </div>
+{% endif %}

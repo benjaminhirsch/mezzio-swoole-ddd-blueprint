@@ -1,12 +1,21 @@
-<div class="toast-wrapper">
-    {% for message in  toasts %}
-        <div class="toast toast-<?= $this->ce($type) ?>" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    {% for type, message in  toasts %}
+        <div class="toast toast-{{ type }}" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="true">
+            <div class="toast-header">
+                <strong>{{ message.title }}</strong>
+            </div>
             <div class="toast-body">
-                <div class="headline">{{ message.title }}</div>
-                <div class="text">
-                    {{ message.body }}
-                </div>
+                {{ message.body }}
             </div>
         </div>
     {% endfor %}
 </div>
+
+{% block javaScript %}
+<script type="application/javascript">
+    (function(){
+        const toastElList = document.querySelectorAll('.toast')
+        const toastList = [...toastElList].map(toastEl => (new bootstrap.Toast(toastEl)).show())
+    })();
+</script>
+{% endblock %}

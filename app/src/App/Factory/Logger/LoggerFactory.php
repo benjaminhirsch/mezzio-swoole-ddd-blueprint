@@ -17,38 +17,36 @@ use function is_string;
 
 final class LoggerFactory
 {
-    /**
-     * @param array<mixed>|null $config
-     */
-    public static function createFromConfig(ContainerInterface $container, ?array $config): Logger
+    /** @param array<mixed>|null $config */
+    public static function createFromConfig(ContainerInterface $container, array|null $config): Logger
     {
         if ($config === null) {
             throw MissingConfiguration::create(
-                'Logger values are missing in config'
+                'Logger values are missing in config',
             );
         }
 
         if (! isset($config['channel'])) {
             throw MissingConfiguration::create(
-                'The channel name for the loggerConfig is missing in the configuration'
+                'The channel name for the loggerConfig is missing in the configuration',
             );
         }
 
         if (! isset($config['handlers'])) {
             throw MissingConfiguration::create(
-                'Missing handlers configuration for the loggerConfig'
+                'Missing handlers configuration for the loggerConfig',
             );
         }
 
         if (! isset($config['processors'])) {
             throw MissingConfiguration::create(
-                'Missing processors configuration for the loggerConfig'
+                'Missing processors configuration for the loggerConfig',
             );
         }
 
         if (! isset($config['timezone'])) {
             throw MissingConfiguration::create(
-                'Missing timezone configuration for the loggerConfig'
+                'Missing timezone configuration for the loggerConfig',
             );
         }
 
