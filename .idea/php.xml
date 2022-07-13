@@ -119,6 +119,7 @@
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-flash" />
+      <path value="$PROJECT_DIR$/app/vendor/platformsh/config-reader" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
