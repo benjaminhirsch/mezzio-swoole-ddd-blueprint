@@ -49,8 +49,8 @@ hooks:
     composer clear-config-cache
   deploy: |
     set -e        
-    vendor/bin/phinx status --no-interaction --environment=production --no-ansi
     vendor/bin/phinx migrate --no-interaction --environment=production --no-ansi
+    vendor/bin/phinx status --no-interaction --environment=production --no-ansi
 
 # The configuration of app when it is exposed to the web.
 web:
