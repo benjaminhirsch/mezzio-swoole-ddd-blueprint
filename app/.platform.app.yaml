@@ -44,14 +44,12 @@ hooks:
   build: |
     set -e    
     { bash install-openswoole.sh openswoole 4.12.1 ; } 3<&0
-    
-    # Application
     composer install --no-interaction --optimize-autoloader --no-dev --prefer-dist --no-ansi    
     composer mezzio app:factory:generate
     composer clear-config-cache
   deploy: |
-    set -e    
-    vendor/bin/phinx status --environment=production --no-ansi
+    set -e        
+    vendor/bin/phinx status --no-interaction --environment=production --no-ansi
     vendor/bin/phinx migrate --no-interaction --environment=production --no-ansi
 
 # The configuration of app when it is exposed to the web.
