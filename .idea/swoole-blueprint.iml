@@ -68,9 +68,6 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-flash" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/platformsh/config-reader" />
-      <excludeFolder url="file://$MODULE_DIR$/app/vendor/symfony/process" />
-      <excludeFolder url="file://$MODULE_DIR$/app/vendor/laminas/laminas-code" />
-      <excludeFolder url="file://$MODULE_DIR$/app/vendor/mezzio/mezzio-tooling" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/laminas/laminas-inputfilter" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/laminas/laminas-validator" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/laminas/laminas-filter" />

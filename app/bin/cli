@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use App\Infrastructure\Command\FactoryGenerator;
+use Mezzio\Swoole\Command\ReloadCommand;
+use Mezzio\Swoole\Command\StartCommand;
+use Mezzio\Swoole\Command\StatusCommand;
+use Mezzio\Swoole\Command\StopCommand;
+use Symfony\Component\Console\Application;
+use Psr\Container\ContainerInterface;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+chdir(__DIR__ . '/../');
+
+require 'vendor/autoload.php';
+
+$container = require 'config/container.php';
+assert($container instanceof ContainerInterface);
+
+$application = new Application();
+$application->setAutoExit(false);
+
+$application->setCatchExceptions(false);
+
+$application->add($container->get(StartCommand::class));
+$application->add($container->get(ReloadCommand::class));
+$application->add($container->get(StatusCommand::class));
+$application->add($container->get(StopCommand::class));
+$application->add($container->get(FactoryGenerator::class));
+
+try {
+    exit($application->run());
+} catch (Throwable $e) {
+    $application->renderThrowable(
+        $e,
+        (new ConsoleOutput())
+            ->getErrorOutput()
+    );
+    exit(1);
+}

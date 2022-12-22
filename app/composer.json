@@ -71,7 +71,6 @@
         "mezzio/mezzio-session": "^1.6",
         "mezzio/mezzio-session-cache": "^1.7",
         "mezzio/mezzio-swoole": "^4.5",
-        "mezzio/mezzio-tooling": "^2.8",
         "mezzio/mezzio-twigrenderer": "^2.6",
         "monolog/monolog": "^2.0.0",
         "platformsh/config-reader": "^2.4",

@@ -15,7 +15,6 @@ use App\Factory\Middleware\Template\Extension\FlashFactory;
 use App\Factory\Reponse\HtmlResponseRendererFactory;
 use App\Factory\Reponse\TemplateRendererInterfaceFactory;
 use App\Factory\Repository\UserFactory;
-use App\Infrastructure\Command\FactoryGenerator;
 use App\Infrastructure\InputFilter;
 use App\Infrastructure\Middleware\Template\Extension\Authentication;
 use App\Infrastructure\Middleware\Template\Extension\Flash;
@@ -92,11 +91,6 @@ class ConfigProvider
                         'password' => 'password',
                     ],
                     'service' => PDO::class,
-                ],
-            ],
-            'laminas-cli' => [
-                'commands' => [
-                    'app:factory:generate' => FactoryGenerator::class,
                 ],
             ],
             'dependencies' => $this->getDependencies(),

@@ -77,9 +77,6 @@
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-authentication-session" />
       <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-flash" />
       <path value="$PROJECT_DIR$/app/vendor/platformsh/config-reader" />
-      <path value="$PROJECT_DIR$/app/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-code" />
-      <path value="$PROJECT_DIR$/app/vendor/mezzio/mezzio-tooling" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-inputfilter" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-validator" />
       <path value="$PROJECT_DIR$/app/vendor/laminas/laminas-filter" />

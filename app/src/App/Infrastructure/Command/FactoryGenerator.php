@@ -26,6 +26,11 @@ final class FactoryGenerator extends Command
         parent::__construct();
     }
 
+    public function getName(): string|null
+    {
+        return 'app:factory:generate';
+    }
+
     public function getDescription(): string
     {
         return 'Generate all factories';
