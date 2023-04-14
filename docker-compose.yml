@@ -22,7 +22,7 @@ services:
   app:
     <<: *default-service
     <<: *as-current-user
-    image: columbusinteractive/php-swoole:8.1
+    image: columbusinteractive/php-swoole:8.2
     container_name: swoole-app
     environment:
       <<: *default-variables
@@ -44,7 +44,7 @@ services:
   # PostgreSQL
   db:
     <<: *default-service
-    image: postgres:13-alpine
+    image: postgres:15-alpine
     container_name: swoole-db
     environment:
       <<: *default-variables
